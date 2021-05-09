@@ -20,6 +20,16 @@ public class SaleDTO implements Serializable {
 	
 	private LocalDate date;
 
+	private SellerDTO seller;
+	
+	public SellerDTO getSeller() {
+		return seller;
+	}
+
+	public void setSeller(SellerDTO seller) {
+		this.seller = seller;
+	}
+
 	public SaleDTO() {
 		
 	}
@@ -82,6 +92,7 @@ public class SaleDTO implements Serializable {
 		this.deals = entity.getDeals();
 		this.amount = entity.getAmount();
 		this.date = entity.getDate();
+		this.seller = new SellerDTO(entity.getSeller());
 	}
 	
 }
