@@ -20,6 +20,7 @@ function DataTable() {
     useEffect(() => {
         axios.get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,desc`)
             .then(response => {
+                console.log(response.data)
                 setPage(response.data)
             })
     }, [activePage])
@@ -47,7 +48,7 @@ function DataTable() {
                             <tr key={x.id}>
                                 <td>{formatLocalDate(x.date, "dd/MM/yyyy")}</td>
                                 <td>{x.seller.name}</td>
-                                <td>{x.visitead}</td>
+                                <td>{x.visited}</td>
                                 <td>{x.deals}</td>
                                 <td>{x.amount.toFixed(2)}</td>
                             </tr>
