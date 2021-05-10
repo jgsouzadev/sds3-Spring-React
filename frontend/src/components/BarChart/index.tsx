@@ -37,7 +37,6 @@ function BarChart() {
         axios.get(`${BASE_URL}/sales/total-success`)
             .then(response => {
                 const data = response.data as SaleSuccess[];
-                console.log(data)
                 const myLabels = data.map(x => x.sellerName);
                 const mySeries = data.map(x => round(100.0 * x.deals / x.visitead, 1));
                 console.log(`${mySeries} ||| ${myLabels}`)
@@ -53,7 +52,6 @@ function BarChart() {
                     ]
                 })
             })
-            console.log(chartData)
     }, [])
 
 
